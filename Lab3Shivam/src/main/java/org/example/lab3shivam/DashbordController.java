@@ -36,7 +36,7 @@ public class DashbordController {
     @FXML
     protected void handleUserButton(ActionEvent event) {
         try {
-            Parent secondScene = FXMLLoader.load(getClass().getResource("employeepage.fxml"));
+            Parent secondScene = FXMLLoader.load(getClass().getResource("employee.fxml"));
 
             Stage secondStage = new Stage();
             secondStage.setTitle("Employee Page");

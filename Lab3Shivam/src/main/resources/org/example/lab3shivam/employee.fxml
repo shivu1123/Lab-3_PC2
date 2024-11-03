@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab3shivam.AdminController">
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab3shivam.EmployeeController">
     <children>
         <!-- Main VBox for Centered Layout -->
         <VBox alignment="TOP_CENTER" spacing="15" layoutX="20" layoutY="20" prefWidth="400" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
@@ -17,14 +17,14 @@
             <Label fx:id="errorLabel" textFill="RED" />
 
             <!-- Text Fields for User Input -->
-            <TextField fx:id="enterid" promptText="Enter ID" />
-            <TextField fx:id="entername" promptText="Enter Name" />
-            <TextField fx:id="enteraddress" promptText="Enter Address" />
-            <TextField fx:id="entersalary" promptText="Enter Salary" />
+            <TextField fx:id="EnterID" promptText="Enter ID" />
+            <TextField fx:id="EnterName" promptText="Enter Name" />
+            <TextField fx:id="EnterAddress" promptText="Enter Address" />
+            <TextField fx:id="EnterSalary" promptText="Enter Salary" />
 
             <!-- HBox for CRUD Operation Buttons -->
             <HBox spacing="10" alignment="CENTER">
-                <Button mnemonicParsing="false" text="Insert" onAction="#insertdata" />
+                <Button mnemonicParsing="false" text="Insert" onAction="#insertData" />
                 <Button mnemonicParsing="false" text="Update" onAction="#updateData" />
                 <Button mnemonicParsing="false" text="Delete" onAction="#deleteData" />
                 <Button mnemonicParsing="false" text="Load Data" onAction="#loadData" />
@@ -34,8 +34,8 @@
             <!-- TableView to Display Database Data -->
             <TableView fx:id="tableView" prefHeight="200.0" prefWidth="400.0">
                 <columns>
-                    <TableColumn fx:id="AdminID" prefWidth="100.0" text="AdminID" />
-                    <TableColumn fx:id="AdminName" prefWidth="100.0" text="AdminName" />
+                    <TableColumn fx:id="EmployeeID" prefWidth="100.0" text="EmployeeID" />
+                    <TableColumn fx:id="Name" prefWidth="100.0" text="Name" />
                     <TableColumn fx:id="Address" prefWidth="100.0" text="Address" />
                     <TableColumn fx:id="Salary" prefWidth="100.0" text="Salary" />
                 </columns>

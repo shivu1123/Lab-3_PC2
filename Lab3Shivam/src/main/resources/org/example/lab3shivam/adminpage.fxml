@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -7,37 +6,43 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab3shivam.Admincontroller">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.lab3shivam.AdminController">
+    <children>
+        <!-- Main VBox for Centered Layout -->
+        <VBox alignment="TOP_CENTER" spacing="15" layoutX="20" layoutY="20" prefWidth="400" AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20">
+            <!-- Error Label -->
+            <Label fx:id="errorLabel" textFill="RED" />
 
-    <AnchorPane prefHeight="393.0" prefWidth="1234.0">
-        <children>
-            <Label layoutX="564.0" layoutY="34.0" text="Admin Information" />
-            <TextField fx:id="adminIdField" layoutX="564.0" layoutY="78.0" promptText="Admin ID" />
-            <TextField fx:id="adminNameField" layoutX="564.0" layoutY="123.0" promptText="Admin Name" />
-            <TextField fx:id="addressField" layoutX="564.0" layoutY="169.0" promptText="Address" />
-            <TextField fx:id="salaryField" layoutX="564.0" layoutY="210.0" promptText="Monthly Salary" />
+            <!-- Text Fields for User Input -->
+            <TextField fx:id="enterid" promptText="Enter ID" />
+            <TextField fx:id="entername" promptText="Enter Name" />
+            <TextField fx:id="enteraddress" promptText="Enter Address" />
+            <TextField fx:id="entersalary" promptText="Enter Salary" />
 
-            <Button layoutX="792.0" layoutY="197.0" onAction="#handleInsert" text="Insert" />
-            <Button layoutX="790.0" layoutY="156.0" onAction="#handleDelete" text="Delete" />
-            <Button layoutX="788.0" layoutY="117.0" onAction="#handleUpdate" text="Update" />
-            <Button layoutX="786.0" layoutY="78.0" onAction="#handleLoad" text="Load" />
-            <Button layoutX="785.0" layoutY="43.0" onAction="#handleFetch" text="Fetch" />
+            <!-- HBox for CRUD Operation Buttons -->
+            <HBox spacing="10" alignment="CENTER">
+                <Button mnemonicParsing="false" text="Insert" onAction="#insertdata" />
+                <Button mnemonicParsing="false" text="Update" onAction="#updateData" />
+                <Button mnemonicParsing="false" text="Delete" onAction="#deleteData" />
+                <Button mnemonicParsing="false" text="Load Data" onAction="#loadData" />
+                <Button mnemonicParsing="false" text="Fetch Data" onAction="#populateTable" />
+            </HBox>
 
-            <TableView fx:id="tableView" layoutX="146.0" layoutY="43.0" prefHeight="200.0" prefWidth="347.0">
+            <!-- TableView to Display Database Data -->
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="400.0">
                 <columns>
-                    <TableColumn fx:id="AdminID" prefWidth="75.0" text="AdminID" />
-                    <TableColumn fx:id="AdminName" prefWidth="75.0" text="AdminName" />
-                    <TableColumn fx:id="Address" prefWidth="75.0" text="Address" />
-                    <TableColumn fx:id="Salary" prefWidth="75.0" text="Yearly Salary" />
+                    <TableColumn fx:id="AdminID" prefWidth="100.0" text="AdminID" />
+                    <TableColumn fx:id="AdminName" prefWidth="100.0" text="AdminName" />
+                    <TableColumn fx:id="Address" prefWidth="100.0" text="Address" />
+                    <TableColumn fx:id="Salary" prefWidth="100.0" text="Salary" />
                 </columns>
             </TableView>
 
-            <Button layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#Backbtn" text="Back" />
-        </children>
-    </AnchorPane>
-</VBox>
+            <!-- Back Button -->
+            <Button text="Back to Dashboard" onAction="#goToDashboard" />
+        </VBox>
+    </children>
+</AnchorPane>

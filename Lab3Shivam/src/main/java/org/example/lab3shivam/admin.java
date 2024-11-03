@@ -13,19 +13,35 @@ public class admin {
         this.Salary = Salary;
     }
 
-    public int getId() {
-        return AdminID;  // Change this to getAdminId if you prefer
+    public int getAdminID() {
+        return AdminID;
     }
 
-    public String getName() {
-        return AdminName;  // Change this to getAdminName if you prefer
+    public void setAdminID(int AdminID) {
+        this.AdminID = AdminID;
     }
 
-    public String getAddress() {  // Changed from getDoctor() to getAddress()
+    public String getAdminName() {
+        return AdminName;
+    }
+
+    public void setAdminName(String AdminName) {
+        this.AdminName = AdminName;
+    }
+
+    public String getAddress() {
         return Address;
     }
 
-    public int getSalary() {  // Changed from getRoom() to getSalary()
+    public void getAddress(String Address) {
+        this.Address = Address;
+    }
+
+    public int getSalary() {
         return Salary;
+    }
+
+    public void setSalary(int Salary) {
+        this.Salary = Salary;
     }
 }

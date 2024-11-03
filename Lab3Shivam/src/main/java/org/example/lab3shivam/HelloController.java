@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class HelloController {
     @FXML
-    private TextField usernameField;
+    private TextField emailField;  // Updated field name from usernameField to emailField
 
     @FXML
     private PasswordField passwordField;
@@ -23,12 +23,14 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        String username = usernameField.getText();
+        String email = emailField.getText();  // Get email from emailField
         String password = passwordField.getText();
 
         // Validate input
-        if (username.isEmpty() || password.isEmpty()) {
+        if (email.isEmpty() || password.isEmpty()) {
             errorMessage.setText("Both fields are required.");
+        } else if (!email.matches("^[\\w-\\.]+@[\\w-]+\\.[a-zA-Z]{2,4}$")) {
+            errorMessage.setText("Please enter a valid email.");
         } else if (password.length() < 8) {
             errorMessage.setText("Password must be at least 8 characters long.");
         } else {
@@ -38,7 +40,7 @@ public class HelloController {
                 Stage secondStage = new Stage();
                 secondStage.setTitle("Dashboard");
                 secondStage.setScene(new Scene(secondScene));
-                Stage firstSceneStage = (Stage) usernameField.getScene().getWindow();
+                Stage firstSceneStage = (Stage) emailField.getScene().getWindow();
                 firstSceneStage.close();
 
                 secondStage.show();
